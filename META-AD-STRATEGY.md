@@ -18,11 +18,13 @@
 4. [Ad Creative Direction](#4-ad-creative-direction)
 5. [Copy Frameworks & Example Ads](#5-copy-frameworks--example-ads)
 6. [Headlines & Hooks Library](#6-headlines--hooks-library)
-7. [Budget Allocation](#7-budget-allocation)
-8. [Objection Handling in Ads](#8-objection-handling-in-ads)
-9. [Landing Page Requirements](#9-landing-page-requirements)
-10. [Tracking & Measurement](#10-tracking--measurement)
-11. [Decision Rules — When to Kill or Scale](#11-decision-rules--when-to-kill-or-scale)
+7. [Positioning AI for Business Audiences](#7-positioning-ai-for-business-audiences)
+8. [Budget Allocation](#8-budget-allocation)
+9. [Early Bird & Pricing Strategy](#9-early-bird--pricing-strategy)
+10. [Objection Handling in Ads](#10-objection-handling-in-ads)
+11. [Landing Page Requirements](#11-landing-page-requirements)
+12. [Tracking & Measurement](#12-tracking--measurement)
+13. [Decision Rules — When to Kill or Scale](#13-decision-rules--when-to-kill-or-scale)
 
 ---
 
@@ -250,6 +252,32 @@ Ensure your ad account timezone is set to AWST. If it's set to AEST, adjust sche
 - **Always add captions/text overlays** — 85% of Meta video is watched without sound.
 - **Speaker should be close to camera** — fills the frame, feels personal and direct.
 - **Background:** A real office, co-working space, or Perth landmark. Not a blank wall. Not a studio.
+- **Audio quality matters more than video quality.** Use a lapel mic or directional mic. Tinny audio signals low quality instantly.
+
+### The First 3 Seconds — Three Proven Approaches
+
+**Option A: Pattern Interrupt with Bold Text Overlay**
+- Black screen or solid colour with large white text: "STOP using AI like a beginner."
+- Speaker walks into frame and begins talking.
+- Text is processed faster than speech — the statement creates a micro-gap of "wait, am I doing it wrong?" that holds attention.
+
+**Option B: Direct-to-Camera, Mid-Sentence Energy**
+- Speaker already in frame, mid-sentence energy (not starting cold): "...and that's why 90% of business owners are using AI completely wrong."
+- Feels like the viewer stumbled into an important conversation already happening.
+- Speaker should be leaning slightly forward, animated, not stiff.
+
+**Option C: Screen Recording Reveal**
+- Screen recording showing an AI tool doing something visually impressive at 2x speed.
+- Text overlay: "This took 3 minutes. It used to take 3 hours."
+- Cut to speaker: "Let me show you how."
+
+### UGC Content Ideas (Without Past Attendee Footage)
+
+If this is a newer workshop without testimonial footage:
+- **Speaker-as-creator:** Record directly to camera, phone-style, talking about why you built the workshop or sharing a quick AI tip that demonstrates expertise
+- **Screen-share "over the shoulder":** Record yourself using an AI tool to accomplish something impressive. Narrate casually. "Watch this — I'm going to build an entire marketing strategy in 4 minutes."
+- **Behind-the-scenes prep:** Film yourself setting up the workshop space, reviewing materials. "Setting up for our Perth workshop. 40 business owners are about to have a very different relationship with AI."
+- **Reaction-style:** Record a reaction to a common AI misconception. "I keep seeing business owners say 'I tried ChatGPT and it wasn't that useful.' Here's the problem..."
 
 ### Static Image Creative
 
@@ -402,34 +430,48 @@ This is the most practical AI training available in Perth. Don't wait for the ne
 3. "What if I told you AI could do 80% of your busywork?"
 4. "Do you know what your competitors are doing with AI right now?"
 5. "Still think AI is just for tech people?"
+6. "Be honest: do you actually know how to use AI in your business, or are you just playing with ChatGPT?"
+7. "What would you do with an extra full day back in your working week?"
+8. "Still writing every email, proposal, and social post from scratch? Why?"
 
 **Bold Statement Hooks:**
-6. "AI won't replace you. But someone using AI will."
-7. "I automated 80% of my admin work in one afternoon. Here's how."
-8. "The biggest career risk right now isn't learning AI. It's ignoring it."
-9. "Every professional in Perth needs to see this."
-10. "One afternoon is all it takes to completely change how you work."
+9. "AI won't replace you. But a business owner who masters AI will."
+10. "I automated 80% of my admin work in one afternoon. Here's how."
+11. "The biggest career risk right now isn't learning AI. It's ignoring it."
+12. "Every professional in Perth needs to see this."
+13. "One afternoon is all it takes to completely change how you work."
+14. "Most business owners are using AI wrong. And it's costing them thousands."
+15. "Perth businesses that ignore AI in 2026 won't exist in 2028."
+16. "You don't need to learn to code. You need to learn to command."
 
 **Curiosity Hooks:**
-11. "There's one AI skill most professionals don't know exists..."
-12. "I just did in 30 seconds what used to take me 2 hours."
-13. "The AI tool nobody's talking about that saves me 10+ hours a week."
-14. "Here's what happens when you actually learn to use AI properly..."
+17. "There's one AI skill most professionals don't know exists..."
+18. "I just did in 30 seconds what used to take me 2 hours."
+19. "The AI tool nobody's talking about that saves me 10+ hours a week."
+20. "Here's what happens when you actually learn to use AI properly..."
+21. "There's a 4-step AI workflow that's saving Perth business owners 15+ hours a week. Here's what they're doing differently..."
+22. "I showed a room of 200 business owners one AI prompt. Half of them completely changed how they work the next day."
+23. "The businesses growing fastest right now all have one thing in common — and it's not more staff."
 
 **FOMO / Urgency Hooks:**
-15. "Perth's first AI Mastery Workshop is almost full."
-16. "Your competitors are already doing this. Catch up on April 28."
-17. "Last time I ran this, it sold out in 48 hours."
-18. "If you don't learn AI in 2026, when will you?"
+24. "Perth's first AI Mastery Workshop is almost full."
+25. "Your competitors are already doing this. Catch up on April 28."
+26. "Last time I ran this, it sold out in 48 hours."
+27. "If you don't learn AI in 2026, when will you?"
+28. "We only run this workshop once in Perth. 40 seats. Once they're gone, they're gone."
+29. "Every month you wait to learn AI properly, your competitors pull further ahead."
 
 **Result Hooks:**
-19. "After this workshop, you'll never write a report from scratch again."
-20. "Imagine finishing your Friday work by Wednesday lunchtime."
-21. "One attendee saved 12 hours in their first week. Here's what they learned."
+30. "After this workshop, you'll never write a report from scratch again."
+31. "Imagine finishing your Friday work by Wednesday lunchtime."
+32. "One attendee saved 12 hours in their first week. Here's what they learned."
+33. "One attendee automated their entire client onboarding process before lunch on Day One."
 
 **Story Hooks:**
-22. "I used to spend entire weekends on proposals. Not anymore."
-23. "Six months ago I was sceptical about AI. Then I tried this..."
+34. "I used to spend entire weekends on proposals. Not anymore."
+35. "Six months ago I was sceptical about AI. Then I tried this..."
+36. "I spent 18 months testing every AI tool on the market so you don't have to. Here's what actually works for business."
+37. "Last year I walked into a boardroom and asked 12 executives to do one task with AI. Only one of them could. That moment is why I built this workshop."
 
 ### Headline Variations (for ad headline field)
 
@@ -479,7 +521,63 @@ This is the most practical AI training available in Perth. Don't wait for the ne
 
 ---
 
-## 7. Budget Allocation
+## 7. Positioning AI for Business Audiences
+
+### Core Principle
+
+**Frame AI as a business tool, not a technology.** The target audience doesn't care about AI for its own sake. They care about time, money, competitive advantage, and making their working life easier.
+
+### Language Guide
+
+| Instead of... | Say... |
+|---|---|
+| Artificial intelligence | AI tools / AI systems |
+| Machine learning models | Smart workflows |
+| Prompt engineering | Getting better results from AI |
+| Large language models | AI assistants |
+| Automate your pipeline | Get hours back in your week |
+| Neural networks | (Don't mention this at all) |
+| Fine-tuning | Customising AI for your business |
+| API integration | Making your tools work together |
+| Technical implementation | Hands-on setup |
+| Cutting-edge technology | Practical tools available right now |
+
+### Words and Phrases to Avoid
+
+- **"Revolutionary" / "Game-changing"** — overused, triggers scepticism in experienced business people
+- **"Disruptive"** — business owners have disruption fatigue
+- **"Even a beginner can do it"** — professionals don't want to be called beginners. Say "No tech background required" instead
+- **"Robots / Skynet / sci-fi references"** — trivialises the topic
+- **Acronyms and jargon** — LLM, NLP, GPT-4, RAG, fine-tuning. If you must reference a tool by name (e.g., ChatGPT), do so, but don't assume ecosystem knowledge
+
+### Five Positioning Angles (Use Across Creative)
+
+**1. The Productivity Angle**
+"What if your entire team could get an extra day back every week?" Position AI as the equivalent of hiring a highly capable assistant for every person in the organisation.
+
+**2. The Competitive Advantage Angle**
+"Your competitors are already using these tools. The question is whether you're going to lead or catch up." Works especially well in Perth where the business community is tight-knit.
+
+**3. The Demystification Angle**
+"You've heard the hype. You've seen the headlines. This workshop cuts through all of it and shows you what actually works for businesses like yours."
+
+**4. The Practical Implementation Angle**
+"This isn't a seminar where you sit and listen. You'll build real AI systems during the workshop and walk out with tools you'll use immediately." Business professionals are wary of "talk shops."
+
+**5. The Leadership Angle**
+"Your team is waiting for someone to lead them into AI. That's you. This workshop gives you the knowledge and confidence to do it." Appeals to ego and responsibility simultaneously.
+
+### Perth-Specific Positioning
+
+- Perth's business community is smaller and more relationship-driven than Sydney or Melbourne. **Local social proof outperforms generic national testimonials.**
+- There's often a perception that cutting-edge trends arrive later than the East Coast. Frame this as "Perth is leading, not following" or "bringing world-class AI training to Perth" to tap into local pride.
+- Reference the local economy: mining, resources, professional services, property, trades. Name-checking Perth industries makes the ad feel targeted and relevant.
+- Perth professionals often travel to Melbourne/Sydney for quality training. The fact that this is local is a selling point: "World-class AI training — no flight to Sydney required."
+- **FIFO workforce consideration:** Many Perth professionals work compressed rosters. Some of your audience may only be in Perth 2 weeks out of 4. This makes early registration and retargeting even more important.
+
+---
+
+## 8. Budget Allocation
 
 ### Total Budget: $2,000 AUD
 
@@ -530,7 +628,40 @@ Perth CPMs are typically 10–20% lower than Sydney/Melbourne due to less advert
 
 ---
 
-## 8. Objection Handling in Ads
+## 9. Early Bird & Pricing Strategy
+
+### Pricing in Ads — Show Price or Not?
+
+**Do NOT show the full price in the ad.** Drive to the landing page and let it build value first. Price in the ad acts as a filter, not a converter — you lose everyone who would have clicked, read the value proposition, and then justified the investment.
+
+**Exception — reference pricing to create urgency without anchoring on the full number:**
+- "Early bird tickets from $X" (if the early bird price is genuinely compelling)
+- "Save $150 — early bird closes Friday"
+- "Normally $797 — launch pricing available this week only"
+
+### Early Bird Timeline
+
+| Timeline | Pricing Tactic | Campaign Messaging |
+|---|---|---|
+| Week 1–2 (27 Mar – 9 Apr) | Early bird price (20–30% off standard) | "Early bird pricing available — save $X" |
+| Day 12–14 (7–9 Apr) | 48-hour countdown to early bird expiry | "Early bird ends Wednesday — don't miss out" |
+| Week 3 (10–16 Apr) | Standard pricing | "Registration open — only X seats remaining" |
+| Week 4 (17–23 Apr) | Final call | "Last chance to register." Consider adding a bonus (not a discount) if sales stall |
+| Final days (24–27 Apr) | Registration closing | "Registrations close Sunday" |
+
+**The early bird deadline is your single most powerful conversion moment.** Plan your highest retargeting spend around it. The 48 hours before early bird expiry will likely generate more registrations than any other period.
+
+### Pricing Tactics That Convert
+
+- **Early bird with real deadline:** "$197 until April 9, then $297." Creates urgency without manipulation. Stick to the deadline — never extend it. This trains your audience that your deadlines are real.
+- **Price anchoring against alternatives:** "One semester of a master's degree = $15,000. This one-day intensive = $297. Same practical skills."
+- **Value stacking on the landing page:** "Full-day workshop ($500 value) + prompt library ($150 value) + recordings ($200 value) + community access ($300 value) = $1,150 total value → Yours for $197"
+- **Group/team pricing:** "Bring a colleague for 50% off their ticket." Increases word-of-mouth and average order value.
+- **Money-back guarantee:** "If you don't learn at least 5 techniques you can use immediately, full refund." Dramatically reduces friction.
+
+---
+
+## 10. Objection Handling in Ads
 
 Address these directly in ad copy and landing page:
 
@@ -547,7 +678,7 @@ Address these directly in ad copy and landing page:
 
 ---
 
-## 9. Landing Page Requirements
+## 11. Landing Page Requirements
 
 ### Above the Fold (Critical)
 
@@ -558,14 +689,18 @@ Address these directly in ad copy and landing page:
 
 ### Page Structure (Top to Bottom)
 
-1. Hero: Headline + date + CTA + social proof
-2. Pain section: "If you're spending hours on tasks AI could do in minutes..."
-3. What you'll learn: Specific, outcome-focused bullets (not module names)
-4. Who this is for / Who this is NOT for
-5. About the instructor: Photo + 2–3 sentence bio (credibility, not CV)
-6. Testimonials / social proof section
-7. FAQ (address top objections)
-8. Final CTA with urgency element
+1. **Hero:** Headline + date + CTA + social proof
+2. **Pain section:** "If you're spending hours on tasks AI could do in minutes..." (2–3 sentences max)
+3. **What you'll learn:** Specific, outcome-focused bullets. Not "Module 3: Prompt Engineering" but "Build a custom AI assistant that handles your email, scheduling, and client communications."
+4. **Who this is for / Who this is NOT for:** "This is for business owners, managers, and professionals who want practical AI skills. This is NOT for developers looking for technical deep-dives." Qualifies the reader and makes them feel seen.
+5. **About the instructor:** Photo + 2–3 sentence bio. Frame as outcomes: "Trained 500+ business leaders in AI adoption" — not a full CV.
+6. **Testimonials / social proof:** Video testimonials if available. Written with full names and photos if not. Media logos ("As seen in") and company logos ("Trusted by teams at").
+7. **Detailed agenda:** Hour-by-hour breakdown. Answers "Is this practical?" and "What exactly will I get?"
+8. **Pricing section:** Clear pricing with early bird highlighted. Standard price crossed out next to early bird price. Include what's in the box (lunch, materials, follow-up resources, recording access).
+9. **FAQ:** Address top objections as questions: "Do I need technical skills?" "What if I can't attend?" "What do I need to bring?"
+10. **Final CTA with urgency:** Repeat registration button. "Secure Your Seat — Only X Spots Remaining."
+
+**Multiple CTA buttons throughout the page** — not just at the bottom. Every 2–3 scroll-lengths should have a CTA.
 
 ### Conversion Killers to Avoid
 
@@ -574,16 +709,9 @@ Address these directly in ad copy and landing page:
 - Too many form fields (name + email + payment = ideal; adding phone drops conversion 5–10%)
 - No mobile optimisation (70%+ of Meta traffic lands on mobile)
 
-### Pricing Strategy
-
-- For workshops priced $200+: **show price on landing page, not in the ad.** Let the page build value first.
-- Use early bird pricing with a real deadline: "$197 until [date], then $297."
-- Consider value stacking: "3-hour workshop ($500 value) + prompt library ($150 value) + recordings ($200 value) = $850 total value → Yours for $197"
-- Money-back guarantee reduces friction significantly: "If you don't learn at least 5 techniques you can use immediately, full refund."
-
 ---
 
-## 10. Tracking & Measurement
+## 12. Tracking & Measurement
 
 ### Day 1 Setup Checklist
 
@@ -606,7 +734,7 @@ Address these directly in ad copy and landing page:
 
 ---
 
-## 11. Decision Rules — When to Kill or Scale
+## 13. Decision Rules — When to Kill or Scale
 
 ### Kill Rules
 
