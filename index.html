@@ -1,0 +1,1466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meta Ad Strategy — Perth AI Mastery Workshop</title>
+<style>
+  :root {
+    --bg: #0a0a0f;
+    --surface: #13131a;
+    --surface-2: #1a1a24;
+    --surface-3: #22222e;
+    --border: #2a2a3a;
+    --text: #e8e8f0;
+    --text-muted: #8888a0;
+    --accent: #6c5ce7;
+    --accent-light: #a29bfe;
+    --accent-glow: rgba(108, 92, 231, 0.15);
+    --green: #00b894;
+    --amber: #fdcb6e;
+    --red: #e17055;
+    --blue: #74b9ff;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    font-size: 16px;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: rgba(10, 10, 15, 0.92);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+  }
+
+  .nav-brand {
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--accent-light);
+    letter-spacing: -0.3px;
+  }
+
+  .nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--text);
+    font-size: 24px;
+    cursor: pointer;
+    padding: 4px;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 4px;
+    list-style: none;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .nav-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 6px 12px;
+    border-radius: 6px;
+    white-space: nowrap;
+    transition: all 0.2s;
+  }
+
+  .nav-links a:hover {
+    color: var(--text);
+    background: var(--surface-2);
+  }
+
+  /* HERO */
+  .hero {
+    padding: 120px 24px 80px;
+    text-align: center;
+    background: linear-gradient(180deg, var(--accent-glow) 0%, var(--bg) 60%);
+  }
+
+  .hero-badge {
+    display: inline-block;
+    padding: 6px 16px;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    font-size: 13px;
+    color: var(--accent-light);
+    font-weight: 600;
+    margin-bottom: 24px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+
+  .hero h1 {
+    font-size: clamp(32px, 5vw, 56px);
+    font-weight: 800;
+    letter-spacing: -1.5px;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, #fff 0%, var(--accent-light) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-sub {
+    font-size: 18px;
+    color: var(--text-muted);
+    max-width: 600px;
+    margin: 0 auto 32px;
+    line-height: 1.6;
+  }
+
+  .hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+  }
+
+  .hero-stat {
+    text-align: center;
+  }
+
+  .hero-stat-value {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--accent-light);
+    letter-spacing: -0.5px;
+  }
+
+  .hero-stat-label {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-top: 4px;
+  }
+
+  /* LAYOUT */
+  .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  section {
+    padding: 80px 0;
+    border-top: 1px solid var(--border);
+  }
+
+  section:first-of-type {
+    border-top: none;
+  }
+
+  .section-label {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 12px;
+  }
+
+  h2 {
+    font-size: clamp(24px, 3.5vw, 36px);
+    font-weight: 800;
+    letter-spacing: -0.8px;
+    margin-bottom: 16px;
+    line-height: 1.2;
+  }
+
+  h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 32px 0 12px;
+    letter-spacing: -0.3px;
+  }
+
+  h4 {
+    font-size: 16px;
+    font-weight: 700;
+    margin: 24px 0 8px;
+    color: var(--accent-light);
+  }
+
+  p {
+    margin-bottom: 16px;
+    color: var(--text-muted);
+  }
+
+  strong { color: var(--text); }
+
+  ul, ol {
+    margin: 12px 0 20px 20px;
+    color: var(--text-muted);
+  }
+
+  li { margin-bottom: 6px; }
+
+  /* CARDS */
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 28px;
+    margin-bottom: 20px;
+  }
+
+  .card-highlight {
+    border-color: var(--accent);
+    box-shadow: 0 0 30px var(--accent-glow);
+  }
+
+  /* TABLES */
+  .table-wrap {
+    overflow-x: auto;
+    margin: 16px 0 24px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+
+  th {
+    text-align: left;
+    padding: 12px 16px;
+    background: var(--surface-2);
+    color: var(--accent-light);
+    font-weight: 600;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+  }
+
+  td {
+    padding: 10px 16px;
+    border-top: 1px solid var(--border);
+    color: var(--text-muted);
+    vertical-align: top;
+  }
+
+  tr:hover td { background: rgba(255,255,255,0.02); }
+
+  /* BADGES */
+  .badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 100px;
+    font-size: 12px;
+    font-weight: 600;
+  }
+
+  .badge-video { background: rgba(116, 185, 255, 0.15); color: var(--blue); }
+  .badge-image { background: rgba(0, 184, 148, 0.15); color: var(--green); }
+  .badge-retarget { background: rgba(253, 203, 110, 0.15); color: var(--amber); }
+  .badge-awareness { background: rgba(108, 92, 231, 0.15); color: var(--accent-light); }
+
+  /* AD CARDS */
+  .ad-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 32px;
+    transition: border-color 0.3s;
+  }
+
+  .ad-card:hover {
+    border-color: var(--accent);
+  }
+
+  .ad-card-header {
+    padding: 24px 28px 16px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .ad-card-title {
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+  }
+
+  .ad-card-meta {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .ad-card-purpose {
+    padding: 0 28px 16px;
+    font-size: 14px;
+    color: var(--text-muted);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .ad-card-body { padding: 24px 28px; }
+
+  .ad-field-label {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--accent);
+    margin-bottom: 8px;
+    margin-top: 20px;
+  }
+
+  .ad-field-label:first-child { margin-top: 0; }
+
+  .ad-copy {
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 20px;
+    font-size: 14px;
+    line-height: 1.8;
+    color: var(--text);
+    white-space: pre-wrap;
+    margin-bottom: 16px;
+  }
+
+  .ad-fields {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 20px;
+  }
+
+  .ad-field {
+    background: var(--surface-3);
+    border-radius: 8px;
+    padding: 14px 16px;
+  }
+
+  .ad-field-key {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--text-muted);
+    margin-bottom: 4px;
+  }
+
+  .ad-field-value {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text);
+  }
+
+  /* VIDEO SCRIPT */
+  .script-block {
+    background: var(--surface-2);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 8px 8px 0;
+    padding: 16px 20px;
+    margin: 12px 0;
+  }
+
+  .script-time {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--accent-light);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 6px;
+  }
+
+  .script-direction {
+    font-size: 13px;
+    color: var(--text-muted);
+    font-style: italic;
+    margin-bottom: 6px;
+  }
+
+  .script-dialogue {
+    font-size: 15px;
+    color: var(--text);
+    line-height: 1.6;
+  }
+
+  .script-overlay {
+    display: inline-block;
+    background: rgba(108, 92, 231, 0.15);
+    color: var(--accent-light);
+    padding: 2px 10px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 600;
+    margin: 4px 4px 4px 0;
+  }
+
+  /* HOOKS */
+  .hooks-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 12px;
+    margin: 16px 0;
+  }
+
+  .hook-item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 14px 16px;
+    font-size: 14px;
+    color: var(--text);
+    line-height: 1.5;
+    transition: border-color 0.2s;
+  }
+
+  .hook-item:hover { border-color: var(--accent); }
+
+  .hook-number {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background: var(--surface-3);
+    border-radius: 6px;
+    text-align: center;
+    line-height: 24px;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--accent-light);
+    margin-right: 8px;
+    flex-shrink: 0;
+  }
+
+  /* TIMELINE */
+  .timeline {
+    position: relative;
+    padding-left: 32px;
+    margin: 24px 0;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 11px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--border);
+  }
+
+  .timeline-item {
+    position: relative;
+    margin-bottom: 24px;
+  }
+
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -25px;
+    top: 6px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 2px solid var(--bg);
+  }
+
+  .timeline-week {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--accent-light);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+  }
+
+  .timeline-title {
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+
+  .timeline-desc {
+    font-size: 14px;
+    color: var(--text-muted);
+  }
+
+  .timeline-spend {
+    display: inline-block;
+    margin-top: 6px;
+    padding: 2px 10px;
+    background: var(--surface-2);
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--green);
+  }
+
+  /* GRID LAYOUTS */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 16px 0;
+  }
+
+  .three-col {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin: 16px 0;
+  }
+
+  /* LANGUAGE TABLE */
+  .lang-row {
+    display: flex;
+    border-bottom: 1px solid var(--border);
+    padding: 10px 0;
+    gap: 16px;
+    align-items: center;
+  }
+
+  .lang-dont {
+    flex: 1;
+    color: var(--red);
+    font-size: 14px;
+    text-decoration: line-through;
+    opacity: 0.7;
+  }
+
+  .lang-arrow {
+    color: var(--text-muted);
+    font-size: 18px;
+  }
+
+  .lang-do {
+    flex: 1;
+    color: var(--green);
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  /* OBJECTION CARDS */
+  .objection-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px;
+    margin: 20px 0;
+  }
+
+  .objection-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px;
+  }
+
+  .objection-quote {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--amber);
+    margin-bottom: 8px;
+  }
+
+  .objection-response {
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  /* CHECKLIST */
+  .checklist {
+    list-style: none;
+    margin-left: 0;
+  }
+
+  .checklist li {
+    padding: 8px 0 8px 28px;
+    position: relative;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .checklist li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 12px;
+    width: 16px;
+    height: 16px;
+    border: 2px solid var(--border);
+    border-radius: 4px;
+  }
+
+  /* FOOTER */
+  footer {
+    padding: 40px 24px;
+    text-align: center;
+    border-top: 1px solid var(--border);
+    color: var(--text-muted);
+    font-size: 13px;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .nav-links.open {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      right: 0;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 16px;
+    }
+    .nav-toggle { display: block; }
+    .hero { padding: 100px 20px 60px; }
+    .hero-stats { gap: 24px; }
+    .two-col, .three-col { grid-template-columns: 1fr; }
+    .ad-fields { grid-template-columns: 1fr; }
+    .hooks-grid { grid-template-columns: 1fr; }
+    section { padding: 48px 0; }
+    .ad-card-header { padding: 20px 20px 12px; }
+    .ad-card-purpose { padding: 0 20px 12px; }
+    .ad-card-body { padding: 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <div class="nav-brand">Perth AI Workshop Ads</div>
+    <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Toggle menu">&#9776;</button>
+    <ul class="nav-links">
+      <li><a href="#campaign">Campaign</a></li>
+      <li><a href="#timeline">Timeline</a></li>
+      <li><a href="#audiences">Audiences</a></li>
+      <li><a href="#creative">Creative</a></li>
+      <li><a href="#ads">Ads</a></li>
+      <li><a href="#hooks">Hooks</a></li>
+      <li><a href="#positioning">Positioning</a></li>
+      <li><a href="#budget">Budget</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#tracking">Tracking</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-badge">Meta Ads Strategy</div>
+  <h1>Perth AI Mastery Workshop</h1>
+  <p class="hero-sub">Complete advertising playbook for driving registrations. Campaign structure, ad copy, targeting, budget allocation, and 5 ready-to-run ads.</p>
+  <div class="hero-stats">
+    <div class="hero-stat">
+      <div class="hero-stat-value">April 28</div>
+      <div class="hero-stat-label">Event Date</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-value">$2,000</div>
+      <div class="hero-stat-label">Total Budget (AUD)</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-value">31 Days</div>
+      <div class="hero-stat-label">Campaign Window</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-value">30-80</div>
+      <div class="hero-stat-label">Expected Registrations</div>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+
+<!-- CAMPAIGN STRUCTURE -->
+<section id="campaign">
+  <div class="section-label">01 / Campaign Structure</div>
+  <h2>Two-Campaign Architecture</h2>
+  <p>Use <strong>Ad Set Budget Optimization (ABO)</strong>, not CBO. With under $2,000 total spend, CBO starves smaller ad sets. Meta needs ~50 conversions per ad set per week to exit learning phase &mdash; unreachable at this budget with CBO spreading spend.</p>
+
+  <h3>Campaign 1 &mdash; Registrations (75% of budget / ~$1,365)</h3>
+  <p>Objective: Leads (Instant Form) or Conversions (website registration)</p>
+  <div class="table-wrap">
+    <table>
+      <tr><th>Ad Set</th><th>Audience</th><th>Daily Budget</th><th>Duration</th></tr>
+      <tr><td>1A: Interest-targeted cold</td><td>Perth + AI/business interests</td><td>$35/day</td><td>Days 4&ndash;28</td></tr>
+      <tr><td>1B: Warm retargeting</td><td>Video viewers, site visitors, engagers</td><td>$25/day</td><td>Days 8&ndash;28</td></tr>
+      <tr><td>1C: Advantage+ test</td><td>Perth geo + audience suggestions</td><td>$20/day</td><td>Days 8&ndash;21</td></tr>
+    </table>
+  </div>
+
+  <h3>Campaign 2 &mdash; Audience Building (25% of budget / ~$455)</h3>
+  <p>Objective: Video Views / Engagement</p>
+  <div class="table-wrap">
+    <table>
+      <tr><th>Ad Set</th><th>Audience</th><th>Daily Budget</th><th>Duration</th></tr>
+      <tr><td>2A: Broad awareness</td><td>Perth metro + AI/tech interests</td><td>$25/day</td><td>Days 1&ndash;14</td></tr>
+      <tr><td>2B: Lookalike</td><td>2&ndash;3% from email list</td><td>$15/day</td><td>Days 5&ndash;14</td></tr>
+    </table>
+  </div>
+  <p>After Day 14, shut down Campaign 2 and redistribute all budget to Campaign 1.</p>
+
+  <h3>Bidding Strategy</h3>
+  <ul>
+    <li><strong>Lowest Cost (automatic bidding)</strong> across all ad sets &mdash; no cost caps or bid caps</li>
+    <li>Optimise for <strong>maximum number of conversions</strong> (not value)</li>
+    <li>Attribution window: <strong>7-day click, 1-day view</strong></li>
+    <li><strong>Do NOT use Traffic objective</strong> &mdash; it optimises for clicks from low-intent users</li>
+  </ul>
+</section>
+
+<!-- TIMELINE -->
+<section id="timeline">
+  <div class="section-label">02 / Timeline</div>
+  <h2>Day-by-Day Launch Plan</h2>
+  <p>A 31-day campaign from March 27 to April 27, with 2 prep days before launch.</p>
+
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-week">Pre-Launch / 25&ndash;26 March</div>
+      <div class="timeline-title">Prep Days</div>
+      <div class="timeline-desc">Install Meta Pixel. Set up custom conversions. Create Custom Audiences. Film 2&ndash;3 short videos. Design static image ads. Build campaigns in Ads Manager (paused).</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-week">Week 1 / 27 Mar &ndash; 2 Apr</div>
+      <div class="timeline-title">Launch &amp; Build Audiences</div>
+      <div class="timeline-desc">Day 1: Launch video views campaign. Day 4: Launch cold registration ads. First performance review on Day 6. Pause any video with &lt;15% completion rate.</div>
+      <div class="timeline-spend">~$360 spend</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-week">Week 2 / 3&ndash;9 Apr</div>
+      <div class="timeline-title">Activate Retargeting &amp; Optimise</div>
+      <div class="timeline-desc">Day 8: Launch retargeting + Advantage+ test. Kill any creative with $50+ spend and zero conversions. Day 14: Mid-campaign review. Shut down Campaign 2. Redistribute budget.</div>
+      <div class="timeline-spend">~$500 spend</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-week">Week 3 / 10&ndash;16 Apr</div>
+      <div class="timeline-title">Scale Winners &amp; Add Urgency</div>
+      <div class="timeline-desc">Run only top 2 performers. Increase budgets 20&ndash;30%. All creative shifts to urgency messaging. Introduce countdown: "14 days until Perth's biggest AI workshop."</div>
+      <div class="timeline-spend">~$425 spend</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-week">Week 4 / 17&ndash;23 Apr</div>
+      <div class="timeline-title">Final Push</div>
+      <div class="timeline-desc">Consolidate 100% budget into top 1&ndash;2 ad sets. Increase to $70/day. "Last chance" and "seats are almost gone" messaging.</div>
+      <div class="timeline-spend">~$490 spend</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-week">Final Days / 24&ndash;27 Apr</div>
+      <div class="timeline-title">Closing &amp; ANZAC Day Push</div>
+      <div class="timeline-desc">ANZAC Day (Fri 25): People on phones &mdash; lean in. "Registrations close Sunday." Turn off all ads by Sunday evening.</div>
+      <div class="timeline-spend">~$225 spend</div>
+    </div>
+  </div>
+</section>
+
+<!-- AUDIENCES -->
+<section id="audiences">
+  <div class="section-label">03 / Audience Targeting</div>
+  <h2>Perth-Specific Targeting</h2>
+
+  <div class="two-col">
+    <div class="card">
+      <h4>Geo-Targeting</h4>
+      <p>25&ndash;30 km radius from venue. Covers Perth CBD, Fremantle, Joondalup, Midland, Rockingham. Filter: "People living in this location."</p>
+    </div>
+    <div class="card">
+      <h4>Demographics</h4>
+      <p>Age: 28&ndash;55. Education: University graduate (optional layer). Income targeting not available in Australia.</p>
+    </div>
+  </div>
+
+  <h3>Interest Stacking (Narrow Audience &mdash; Intersection)</h3>
+  <div class="two-col">
+    <div class="card">
+      <h4>Group A &mdash; Must match at least one</h4>
+      <ul>
+        <li>Artificial intelligence</li>
+        <li>Machine learning</li>
+        <li>ChatGPT / OpenAI</li>
+        <li>Digital transformation</li>
+        <li>Automation</li>
+        <li>Emerging technologies</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4>Group B &mdash; Must ALSO match one</h4>
+      <ul>
+        <li>Entrepreneurship</li>
+        <li>Small business</li>
+        <li>Business strategy</li>
+        <li>Professional development</li>
+        <li>Leadership development</li>
+        <li>Innovation</li>
+        <li>Digital marketing</li>
+      </ul>
+    </div>
+  </div>
+  <p>Estimated audience size with both groups + Perth geo: <strong>40,000&ndash;80,000</strong></p>
+
+  <h3>Job Title Targeting</h3>
+  <p>Business Owner, CEO, Managing Director, Founder, Director, General Manager, Operations Manager, Marketing Manager, IT Manager, IT Director, CTO, CMO, Consultant, Self-employed. Plus: "Small business owners" behaviour layer.</p>
+
+  <h3>Retargeting Audiences (Build on Day 1)</h3>
+  <div class="table-wrap">
+    <table>
+      <tr><th>Audience</th><th>Window</th><th>Priority</th></tr>
+      <tr><td>Registration page visitors (didn't complete)</td><td>14 days</td><td><strong style="color:var(--red)">Highest</strong></td></tr>
+      <tr><td>All website visitors (excl. converters)</td><td>30 days</td><td><strong style="color:var(--amber)">High</strong></td></tr>
+      <tr><td>Video viewers &mdash; 75%+</td><td>30 days</td><td><strong style="color:var(--amber)">High</strong></td></tr>
+      <tr><td>Video viewers &mdash; 50%+</td><td>30 days</td><td>Medium</td></tr>
+      <tr><td>Facebook/Instagram page engagers</td><td>30 days</td><td>Medium</td></tr>
+      <tr><td>Email list Custom Audience</td><td>N/A</td><td><strong style="color:var(--amber)">High</strong></td></tr>
+    </table>
+  </div>
+
+  <h3>Ad Scheduling (AWST / UTC+8)</h3>
+  <div class="three-col">
+    <div class="card" style="text-align:center;">
+      <div style="font-size:24px;font-weight:800;color:var(--accent-light);">6:30&ndash;8:30 AM</div>
+      <div style="font-size:13px;color:var(--text-muted);margin-top:4px;">Morning commute</div>
+    </div>
+    <div class="card" style="text-align:center;">
+      <div style="font-size:24px;font-weight:800;color:var(--accent-light);">12:00&ndash;1:30 PM</div>
+      <div style="font-size:13px;color:var(--text-muted);margin-top:4px;">Lunch break</div>
+    </div>
+    <div class="card" style="text-align:center;">
+      <div style="font-size:24px;font-weight:800;color:var(--accent-light);">7:00&ndash;10:00 PM</div>
+      <div style="font-size:13px;color:var(--text-muted);margin-top:4px;">Evening peak</div>
+    </div>
+  </div>
+</section>
+
+<!-- CREATIVE -->
+<section id="creative">
+  <div class="section-label">04 / Creative Direction</div>
+  <h2>Ad Creative &amp; Formats</h2>
+
+  <div class="table-wrap">
+    <table>
+      <tr><th>Priority</th><th>Format</th><th>Quantity</th><th>Purpose</th></tr>
+      <tr><td>1</td><td>Short-form video (15&ndash;30 sec)</td><td>2&ndash;3 variants</td><td>Primary conversion driver. Reels + Stories + Feed.</td></tr>
+      <tr><td>2</td><td>Static image ad</td><td>2 variants</td><td>Fast to iterate, strong in Facebook Feed.</td></tr>
+      <tr><td>3</td><td>Carousel (3&ndash;5 cards)</td><td>1</td><td>Agenda/benefits breakdown. Higher CTR than single image.</td></tr>
+    </table>
+  </div>
+
+  <h3>The First 3 Seconds &mdash; Three Proven Approaches</h3>
+  <div class="three-col">
+    <div class="card">
+      <h4>A: Pattern Interrupt</h4>
+      <p>Black screen with large white text: "STOP using AI like a beginner." Speaker walks into frame.</p>
+    </div>
+    <div class="card">
+      <h4>B: Mid-Sentence Energy</h4>
+      <p>Speaker already in frame, animated: "...and that's why 90% of business owners are using AI completely wrong."</p>
+    </div>
+    <div class="card">
+      <h4>C: Screen Recording</h4>
+      <p>AI tool doing something impressive at 2x speed. Text: "This took 3 minutes. It used to take 3 hours." Cut to speaker.</p>
+    </div>
+  </div>
+
+  <h3>Production Notes</h3>
+  <ul>
+    <li><strong>Shoot vertically (9:16)</strong> for Reels and Stories</li>
+    <li><strong>Film in natural light</strong> &mdash; UGC style outperforms polished by 2&ndash;3x on CTR</li>
+    <li><strong>Always add captions</strong> &mdash; 85% of video watched without sound</li>
+    <li><strong>Audio quality &gt; video quality</strong> &mdash; use a lapel mic</li>
+    <li><strong>Background:</strong> real office, co-working space, or Perth landmark</li>
+    <li><strong>Speaker close to camera</strong> &mdash; fills the frame, feels personal</li>
+  </ul>
+</section>
+
+<!-- READY-TO-RUN ADS -->
+<section id="ads">
+  <div class="section-label">05 / Ready-to-Run Ads</div>
+  <h2>5 Production-Ready Ads</h2>
+  <p>Copy and paste directly into Meta Ads Manager. Prioritised by launch order.</p>
+
+  <div class="table-wrap" style="margin-bottom:32px;">
+    <table>
+      <tr><th>Ad</th><th>Name</th><th>Format</th><th>Funnel</th><th>Launch</th></tr>
+      <tr><td>1</td><td>The Wake-Up Call</td><td><span class="badge badge-video">Video 30s</span></td><td><span class="badge badge-awareness">Awareness</span></td><td>Day 1 (27 Mar)</td></tr>
+      <tr><td>2</td><td>The Demo</td><td><span class="badge badge-video">Video 25s</span></td><td><span class="badge badge-awareness">Awareness</span></td><td>Day 1 (27 Mar)</td></tr>
+      <tr><td>3</td><td>The Straight Talker</td><td><span class="badge badge-image">Image</span></td><td>Cold conversion</td><td>Day 4 (30 Mar)</td></tr>
+      <tr><td>4</td><td>The Story</td><td><span class="badge badge-image">Image</span></td><td>Cold conversion</td><td>Day 4 (30 Mar)</td></tr>
+      <tr><td>5</td><td>The Nudge</td><td><span class="badge badge-retarget">Image</span></td><td><span class="badge badge-retarget">Retargeting</span></td><td>Day 8 (3 Apr)</td></tr>
+    </table>
+  </div>
+
+  <!-- AD 1 -->
+  <div class="ad-card">
+    <div class="ad-card-header">
+      <div class="ad-card-title">Ad 1: "The Wake-Up Call"</div>
+      <div class="ad-card-meta">
+        <span class="badge badge-video">Video 30s</span>
+        <span class="badge badge-awareness">Awareness</span>
+      </div>
+    </div>
+    <div class="ad-card-purpose">Top-of-funnel video to build retargeting audiences. Campaign 2 (Video Views) from Day 1. This is the first ad your audience sees.</div>
+    <div class="ad-card-body">
+      <div class="ad-field-label">Video Script</div>
+
+      <div class="script-block">
+        <div class="script-time">Seconds 0&ndash;3 &mdash; The Hook</div>
+        <div class="script-direction">Speaker in frame, close-up, mid-chest and above. Leaning forward with energy. Mid-conversation delivery.</div>
+        <div class="script-overlay">Text overlay: "What 90% of businesses get wrong about AI"</div>
+        <div class="script-dialogue">"Perth &mdash; be honest. Do you actually know how to use AI in your business, or are you just playing with ChatGPT?"</div>
+      </div>
+
+      <div class="script-block">
+        <div class="script-time">Seconds 3&ndash;10 &mdash; The Problem</div>
+        <div class="script-direction">Same framing. Direct but not aggressive. Conversational.</div>
+        <div class="script-dialogue">"Because here's the thing &mdash; most business owners open ChatGPT, type in a vague question, get a mediocre answer, and think 'AI doesn't really work.' That's like buying a Ferrari and only driving it in first gear."</div>
+      </div>
+
+      <div class="script-block">
+        <div class="script-time">Seconds 10&ndash;22 &mdash; The Solution</div>
+        <div class="script-direction">Speaker gestures naturally. Text overlays appear sequentially.</div>
+        <div class="script-dialogue">"On April 28, I'm running a one-day AI workshop right here in Perth. Hands on. No jargon. You'll actually build AI workflows for YOUR business &mdash; the kind that save you 10-plus hours every week."</div>
+        <div style="margin-top:8px;">
+          <span class="script-overlay">Automate your admin</span>
+          <span class="script-overlay">Write proposals in minutes</span>
+          <span class="script-overlay">Analyse data instantly</span>
+        </div>
+      </div>
+
+      <div class="script-block">
+        <div class="script-time">Seconds 22&ndash;30 &mdash; The CTA</div>
+        <div class="script-direction">Direct to camera. Slight pause before final line.</div>
+        <div class="script-dialogue">"This isn't a lecture. You'll walk out ready to use this stuff on Monday morning. Seats are limited. Tap the link to save yours."</div>
+        <div class="script-overlay">AI Mastery Workshop &mdash; Perth &mdash; April 28</div>
+      </div>
+
+      <div class="ad-field-label">Primary Text</div>
+      <div class="ad-copy">What would you do with 10 extra hours every week?
+
+Most Perth business owners know AI is important &mdash; but haven't had time to figure it out properly. You've played with ChatGPT. Maybe watched a few YouTube videos. But you still don't have a system.
+
+On April 28, I'm running a hands-on AI Mastery Workshop in Perth. One day. No jargon. No coding. Just practical AI skills you'll actually use.
+
+You'll walk out with:
+&#8594; AI workflows built for your specific business
+&#8594; Prompts that give you expert-level results every time
+&#8594; Automation systems that save you hours every single week
+
+This isn't a seminar where you sit and listen. You'll build real tools in the room and leave ready to use them Monday morning.
+
+Limited to 40 seats so everyone gets hands-on support.</div>
+
+      <div class="ad-fields">
+        <div class="ad-field"><div class="ad-field-key">Headline</div><div class="ad-field-value">Perth AI Mastery Workshop &mdash; April 28</div></div>
+        <div class="ad-field"><div class="ad-field-key">Description</div><div class="ad-field-value">Hands-on AI skills for business professionals. No tech background needed.</div></div>
+        <div class="ad-field"><div class="ad-field-key">CTA Button</div><div class="ad-field-value">Sign Up</div></div>
+        <div class="ad-field"><div class="ad-field-key">Format</div><div class="ad-field-value">Vertical video (9:16), 30 seconds</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- AD 2 -->
+  <div class="ad-card">
+    <div class="ad-card-header">
+      <div class="ad-card-title">Ad 2: "The Demo"</div>
+      <div class="ad-card-meta">
+        <span class="badge badge-video">Video 25s</span>
+        <span class="badge badge-awareness">Awareness</span>
+      </div>
+    </div>
+    <div class="ad-card-purpose">Top-of-funnel video showing AI in action. Builds curiosity and retargeting pools. Campaign 2 from Day 1.</div>
+    <div class="ad-card-body">
+      <div class="ad-field-label">Video Script</div>
+
+      <div class="script-block">
+        <div class="script-time">Seconds 0&ndash;3 &mdash; The Hook</div>
+        <div class="script-direction">Screen recording: AI tool generating a business proposal at 2x speed. No voice yet &mdash; let the visual work.</div>
+        <div class="script-overlay">Text: "I just wrote a client proposal in 3 minutes. It used to take me 2 hours."</div>
+      </div>
+
+      <div class="script-block">
+        <div class="script-time">Seconds 3&ndash;12 &mdash; The Reveal</div>
+        <div class="script-direction">Quick cuts between 2&ndash;3 screen recordings at speed.</div>
+        <div style="margin-top:8px;">
+          <span class="script-overlay">A week of content &mdash; 4 minutes</span>
+          <span class="script-overlay">Data analysis &mdash; 30 seconds</span>
+          <span class="script-overlay">Client emails &mdash; on autopilot</span>
+        </div>
+      </div>
+
+      <div class="script-block">
+        <div class="script-time">Seconds 12&ndash;20 &mdash; The Offer</div>
+        <div class="script-direction">Cut to speaker, close-up, natural setting. Warm, direct.</div>
+        <div class="script-dialogue">"Everything you just saw? I'll teach you how to do all of it &mdash; and more &mdash; in one afternoon. AI Mastery Workshop. Perth. April 28."</div>
+      </div>
+
+      <div class="script-block">
+        <div class="script-time">Seconds 20&ndash;25 &mdash; The CTA</div>
+        <div class="script-dialogue">"No tech skills needed. Just bring your laptop and an open mind. Link's below."</div>
+        <div class="script-overlay">Perth &mdash; April 28 &mdash; Limited seats</div>
+      </div>
+
+      <div class="ad-field-label">Primary Text</div>
+      <div class="ad-copy">I just built an entire marketing strategy in 4 minutes. A client proposal in 3. A week of social content in 5.
+
+Not because I'm a tech genius. Because I learned how to use AI properly &mdash; and that changes everything.
+
+On April 28, I'm showing Perth business owners and professionals exactly how to do this. The AI Mastery Workshop is one day of hands-on training where you'll build real AI systems for your specific business.
+
+No coding. No jargon. No sitting through slides all day.
+
+You'll leave with AI workflows you'll use every single week &mdash; starting the next morning.
+
+40 seats. One Perth date. Save yours before they're gone.</div>
+
+      <div class="ad-fields">
+        <div class="ad-field"><div class="ad-field-key">Headline</div><div class="ad-field-value">One Afternoon. Real AI Skills. Perth.</div></div>
+        <div class="ad-field"><div class="ad-field-key">Description</div><div class="ad-field-value">See what AI can actually do for your business. April 28.</div></div>
+        <div class="ad-field"><div class="ad-field-key">CTA Button</div><div class="ad-field-value">Sign Up</div></div>
+        <div class="ad-field"><div class="ad-field-key">Format</div><div class="ad-field-value">Vertical video (9:16), 25 seconds</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- AD 3 -->
+  <div class="ad-card">
+    <div class="ad-card-header">
+      <div class="ad-card-title">Ad 3: "The Straight Talker"</div>
+      <div class="ad-card-meta">
+        <span class="badge badge-image">Image</span>
+      </div>
+    </div>
+    <div class="ad-card-purpose">Primary cold-audience conversion ad. Campaign 1, Ad Set 1A (interest-targeted) from Day 4. Your workhorse registration driver.</div>
+    <div class="ad-card-body">
+      <div class="ad-field-label">Image Direction</div>
+      <div class="card" style="margin-bottom:16px;">
+        <p style="margin:0;">Speaker photo: approachable, professional, real setting. Bold text overlay: <strong>"AI Mastery Workshop &mdash; Perth"</strong>. Subtext: <strong>"April 28 | Hands-on | No tech skills needed"</strong>. Clean, high contrast, readable at mobile thumbnail size.</p>
+      </div>
+
+      <div class="ad-field-label">Primary Text</div>
+      <div class="ad-copy">Every week, you're spending hours on tasks that AI could handle in minutes.
+
+Writing reports. Drafting proposals. Creating content. Researching competitors. Answering the same types of emails over and over again.
+
+And the worst part? Other businesses in Perth are already using AI to do all of this &mdash; while you're still doing it the hard way.
+
+That's exactly why I built the AI Mastery Workshop.
+
+On April 28, you'll spend one day in a room with me, getting hands-on with the AI tools that are saving business owners 10-plus hours every week. No theory. No tech jargon. You'll build real workflows for YOUR business and walk out ready to use them.
+
+What you'll leave with:
+&#8594; A personalised AI toolkit for your business
+&#8594; Prompt frameworks that get expert-level outputs every time
+&#8594; Automation workflows that run on autopilot
+&#8594; The confidence to lead AI adoption in your team
+
+This workshop is built for business owners, managers, and professionals &mdash; not developers. If you can write an email, you can do this.
+
+Limited to 40 seats so everyone gets individual support.</div>
+
+      <div class="ad-fields">
+        <div class="ad-field"><div class="ad-field-key">Headline</div><div class="ad-field-value">Hands-On AI Training &mdash; No Coding Required</div></div>
+        <div class="ad-field"><div class="ad-field-key">Description</div><div class="ad-field-value">Perth's only practical AI workshop for business professionals. One day. Real skills.</div></div>
+        <div class="ad-field"><div class="ad-field-key">CTA Button</div><div class="ad-field-value">Sign Up</div></div>
+        <div class="ad-field"><div class="ad-field-key">Format</div><div class="ad-field-value">Static image 1080x1080 or 1080x1350</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- AD 4 -->
+  <div class="ad-card">
+    <div class="ad-card-header">
+      <div class="ad-card-title">Ad 4: "The Story"</div>
+      <div class="ad-card-meta">
+        <span class="badge badge-image">Image</span>
+      </div>
+    </div>
+    <div class="ad-card-purpose">Cold-audience conversion ad using narrative angle. Tests a different emotional entry point against Ad 3. Campaign 1, Ad Set 1A from Day 4.</div>
+    <div class="ad-card-body">
+      <div class="ad-field-label">Image Direction</div>
+      <div class="card" style="margin-bottom:16px;">
+        <p style="margin:0;"><strong>Option A:</strong> Bold dark background with large white/yellow text: <strong>"I went from 8 hours to 45 minutes."</strong> Subtext: "AI Mastery Workshop &mdash; Perth &mdash; April 28"<br><strong>Option B:</strong> Speaker mid-presentation or at whiteboard. Text overlay: "Perth &mdash; April 28"</p>
+      </div>
+
+      <div class="ad-field-label">Primary Text</div>
+      <div class="ad-copy">A year ago, I spent an entire Sunday writing a keynote presentation. Research, outline, slides, speaker notes &mdash; the whole thing. Eight hours gone.
+
+Last month, I did the same task in 45 minutes. Same quality. Better structure, actually.
+
+The difference wasn't some magic shortcut. I just learned how to work WITH AI instead of ignoring it.
+
+And that's exactly what I'm teaching at the AI Mastery Workshop in Perth on April 28.
+
+Not theory about where AI is heading. Not a sales pitch for some software. The actual tools, prompts, and workflows I use every single day to get more done in less time &mdash; and how to set them up for YOUR business.
+
+This workshop is for:
+&#8594; Business owners who know AI matters but haven't had time to figure it out
+&#8594; Managers who want to help their team work smarter
+&#8594; Professionals who are tired of watching tutorials that don't stick
+
+You don't need to be technical. You don't need to know how to code. You just need to show up with a laptop.
+
+One day. 40 seats. Hands-on the entire time.
+
+If you've been telling yourself you'll "get around to learning AI eventually" &mdash; this is your eventually.</div>
+
+      <div class="ad-fields">
+        <div class="ad-field"><div class="ad-field-key">Headline</div><div class="ad-field-value">I Went From 8 Hours to 45 Minutes. I'll Show You How.</div></div>
+        <div class="ad-field"><div class="ad-field-key">Description</div><div class="ad-field-value">Perth AI Mastery Workshop &mdash; April 28 &mdash; Limited seats available.</div></div>
+        <div class="ad-field"><div class="ad-field-key">CTA Button</div><div class="ad-field-value">Sign Up</div></div>
+        <div class="ad-field"><div class="ad-field-key">Format</div><div class="ad-field-value">Static image 1080x1080 or 1080x1350</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- AD 5 -->
+  <div class="ad-card card-highlight">
+    <div class="ad-card-header">
+      <div class="ad-card-title">Ad 5: "The Nudge"</div>
+      <div class="ad-card-meta">
+        <span class="badge badge-retarget">Retargeting</span>
+        <span class="badge badge-image">Image</span>
+      </div>
+    </div>
+    <div class="ad-card-purpose">Bottom-of-funnel retargeting for video viewers, site visitors, and ad engagers who haven't registered. Campaign 1, Ad Set 1B from Day 8.</div>
+    <div class="ad-card-body">
+      <div class="ad-field-label">Image Direction</div>
+      <div class="card" style="margin-bottom:16px;">
+        <p style="margin:0;">Bold text: <strong>"Still thinking about it?"</strong> Subtext: "AI Mastery Workshop &mdash; Perth &mdash; April 28". Bottom: "Early bird pricing won't last." Clean, minimal. The copy does the heavy lifting.</p>
+      </div>
+
+      <div class="ad-field-label">Primary Text</div>
+      <div class="ad-copy">You've seen what AI can do. You know it would save you hours every week. You've been thinking about it.
+
+Here's what you're actually deciding between:
+
+Option A: Keep doing things the hard way. Spend another month watching your competitors pull ahead while you're still Googling "how to use AI for business."
+
+Option B: Spend one day at the AI Mastery Workshop on April 28. Walk out with real AI workflows built for your business. Start saving 10-plus hours a week. Wonder why you didn't do this sooner.
+
+This is the only Perth session this year. 40 seats. Early bird pricing is available now but it won't last.
+
+&#8594; No tech background needed
+&#8594; Hands-on the entire day
+&#8594; You'll leave with tools you use Monday morning
+
+Don't overthink this one.</div>
+
+      <div class="ad-fields">
+        <div class="ad-field"><div class="ad-field-key">Headline</div><div class="ad-field-value">Your Seat Is Waiting &mdash; Perth, April 28</div></div>
+        <div class="ad-field"><div class="ad-field-key">Description</div><div class="ad-field-value">Early bird pricing available. Hands-on AI training for business professionals.</div></div>
+        <div class="ad-field"><div class="ad-field-key">CTA Button</div><div class="ad-field-value">Sign Up</div></div>
+        <div class="ad-field"><div class="ad-field-key">Format</div><div class="ad-field-value">Static image 1080x1080</div></div>
+      </div>
+    </div>
+  </div>
+
+  <h3>Creative Rotation Plan</h3>
+  <div class="table-wrap">
+    <table>
+      <tr><th>Week</th><th>Active Ads</th><th>Notes</th></tr>
+      <tr><td>Week 1</td><td>Ads 1, 2</td><td>Video views campaign. Building retargeting pools.</td></tr>
+      <tr><td>Week 2</td><td>Ads 1, 2, 3, 4, 5</td><td>All ads live. Registration push begins.</td></tr>
+      <tr><td>Week 3</td><td>Top 2&ndash;3</td><td>Kill underperformers. Scale winners 20&ndash;30%.</td></tr>
+      <tr><td>Week 4</td><td>Top 1&ndash;2 + urgency</td><td>Consolidate budget. Final-call messaging.</td></tr>
+    </table>
+  </div>
+</section>
+
+<!-- HOOKS -->
+<section id="hooks">
+  <div class="section-label">06 / Hooks &amp; Headlines</div>
+  <h2>37 Scroll-Stopping Hooks</h2>
+
+  <h4>Question Hooks</h4>
+  <div class="hooks-grid">
+    <div class="hook-item"><span class="hook-number">1</span>"What would you do with 10 extra hours every week?"</div>
+    <div class="hook-item"><span class="hook-number">2</span>"Perth &mdash; are you still doing this manually?"</div>
+    <div class="hook-item"><span class="hook-number">3</span>"What if I told you AI could do 80% of your busywork?"</div>
+    <div class="hook-item"><span class="hook-number">4</span>"Do you know what your competitors are doing with AI right now?"</div>
+    <div class="hook-item"><span class="hook-number">5</span>"Still think AI is just for tech people?"</div>
+    <div class="hook-item"><span class="hook-number">6</span>"Be honest: do you actually know how to use AI in your business, or are you just playing with ChatGPT?"</div>
+    <div class="hook-item"><span class="hook-number">7</span>"What would you do with an extra full day back in your working week?"</div>
+    <div class="hook-item"><span class="hook-number">8</span>"Still writing every email, proposal, and social post from scratch? Why?"</div>
+  </div>
+
+  <h4>Bold Statement Hooks</h4>
+  <div class="hooks-grid">
+    <div class="hook-item"><span class="hook-number">9</span>"AI won't replace you. But a business owner who masters AI will."</div>
+    <div class="hook-item"><span class="hook-number">10</span>"I automated 80% of my admin work in one afternoon. Here's how."</div>
+    <div class="hook-item"><span class="hook-number">11</span>"The biggest career risk right now isn't learning AI. It's ignoring it."</div>
+    <div class="hook-item"><span class="hook-number">12</span>"Every professional in Perth needs to see this."</div>
+    <div class="hook-item"><span class="hook-number">13</span>"Most business owners are using AI wrong. And it's costing them thousands."</div>
+    <div class="hook-item"><span class="hook-number">14</span>"You don't need to learn to code. You need to learn to command."</div>
+  </div>
+
+  <h4>Curiosity Hooks</h4>
+  <div class="hooks-grid">
+    <div class="hook-item"><span class="hook-number">15</span>"There's one AI skill most professionals don't know exists..."</div>
+    <div class="hook-item"><span class="hook-number">16</span>"I just did in 30 seconds what used to take me 2 hours."</div>
+    <div class="hook-item"><span class="hook-number">17</span>"The businesses growing fastest right now all have one thing in common &mdash; and it's not more staff."</div>
+    <div class="hook-item"><span class="hook-number">18</span>"I showed a room of 200 business owners one AI prompt. Half of them completely changed how they work the next day."</div>
+  </div>
+
+  <h4>FOMO &amp; Urgency Hooks</h4>
+  <div class="hooks-grid">
+    <div class="hook-item"><span class="hook-number">19</span>"Perth's first AI Mastery Workshop is almost full."</div>
+    <div class="hook-item"><span class="hook-number">20</span>"Your competitors are already doing this. Catch up on April 28."</div>
+    <div class="hook-item"><span class="hook-number">21</span>"We only run this workshop once in Perth. 40 seats. Once they're gone, they're gone."</div>
+    <div class="hook-item"><span class="hook-number">22</span>"If you don't learn AI in 2026, when will you?"</div>
+  </div>
+
+  <h4>Result &amp; Story Hooks</h4>
+  <div class="hooks-grid">
+    <div class="hook-item"><span class="hook-number">23</span>"After this workshop, you'll never write a report from scratch again."</div>
+    <div class="hook-item"><span class="hook-number">24</span>"Imagine finishing your Friday work by Wednesday lunchtime."</div>
+    <div class="hook-item"><span class="hook-number">25</span>"I spent 18 months testing every AI tool on the market so you don't have to."</div>
+    <div class="hook-item"><span class="hook-number">26</span>"Last year I walked into a boardroom and asked 12 executives to do one task with AI. Only one could."</div>
+  </div>
+</section>
+
+<!-- POSITIONING -->
+<section id="positioning">
+  <div class="section-label">07 / Positioning</div>
+  <h2>Positioning AI for Business Audiences</h2>
+  <p><strong>Core principle:</strong> Frame AI as a business tool, not a technology. The audience cares about time, money, competitive advantage &mdash; not the tech itself.</p>
+
+  <h3>Language Guide</h3>
+  <div class="card">
+    <div class="lang-row"><span class="lang-dont">Artificial intelligence</span><span class="lang-arrow">&rarr;</span><span class="lang-do">AI tools / AI systems</span></div>
+    <div class="lang-row"><span class="lang-dont">Machine learning models</span><span class="lang-arrow">&rarr;</span><span class="lang-do">Smart workflows</span></div>
+    <div class="lang-row"><span class="lang-dont">Prompt engineering</span><span class="lang-arrow">&rarr;</span><span class="lang-do">Getting better results from AI</span></div>
+    <div class="lang-row"><span class="lang-dont">Large language models</span><span class="lang-arrow">&rarr;</span><span class="lang-do">AI assistants</span></div>
+    <div class="lang-row"><span class="lang-dont">Fine-tuning</span><span class="lang-arrow">&rarr;</span><span class="lang-do">Customising AI for your business</span></div>
+    <div class="lang-row"><span class="lang-dont">API integration</span><span class="lang-arrow">&rarr;</span><span class="lang-do">Making your tools work together</span></div>
+    <div class="lang-row"><span class="lang-dont">Technical implementation</span><span class="lang-arrow">&rarr;</span><span class="lang-do">Hands-on setup</span></div>
+    <div class="lang-row" style="border:none;"><span class="lang-dont">Cutting-edge technology</span><span class="lang-arrow">&rarr;</span><span class="lang-do">Practical tools available right now</span></div>
+  </div>
+
+  <h3>Five Positioning Angles</h3>
+  <div class="two-col">
+    <div class="card">
+      <h4>1. Productivity</h4>
+      <p>"What if your entire team could get an extra day back every week?"</p>
+    </div>
+    <div class="card">
+      <h4>2. Competitive Advantage</h4>
+      <p>"Your competitors are already using these tools. Are you going to lead or catch up?"</p>
+    </div>
+    <div class="card">
+      <h4>3. Demystification</h4>
+      <p>"You've heard the hype. This workshop shows you what actually works."</p>
+    </div>
+    <div class="card">
+      <h4>4. Practical Implementation</h4>
+      <p>"You'll build real AI systems and walk out with tools you'll use immediately."</p>
+    </div>
+    <div class="card">
+      <h4>5. Leadership</h4>
+      <p>"Your team is waiting for someone to lead them into AI. That's you."</p>
+    </div>
+    <div class="card">
+      <h4>Perth-Specific</h4>
+      <p>"World-class AI training &mdash; no flight to Sydney required." Tap into local pride. Reference mining, resources, professional services.</p>
+    </div>
+  </div>
+</section>
+
+<!-- BUDGET -->
+<section id="budget">
+  <div class="section-label">08 / Budget</div>
+  <h2>Budget Allocation</h2>
+  <p><strong>Total: $2,000 AUD.</strong> Meta charges 10% GST &mdash; effective ad spend is ~$1,818.</p>
+
+  <div class="table-wrap">
+    <table>
+      <tr><th>Phase</th><th>Dates</th><th>Days</th><th>Daily Avg</th><th>Total</th><th>%</th></tr>
+      <tr><td>Audience Building</td><td>27 Mar &ndash; 9 Apr</td><td>14</td><td>$32/day</td><td>$455</td><td>23%</td></tr>
+      <tr><td>Registration Push (Cold)</td><td>30 Mar &ndash; 23 Apr</td><td>25</td><td>$35/day</td><td>$875</td><td>44%</td></tr>
+      <tr><td>Registration Push (Warm)</td><td>3 Apr &ndash; 27 Apr</td><td>25</td><td>$25/day</td><td>$445</td><td>22%</td></tr>
+      <tr><td>Final Surge</td><td>24 &ndash; 27 Apr</td><td>4</td><td>$56/day</td><td>$225</td><td>11%</td></tr>
+    </table>
+  </div>
+
+  <h3>Expected Benchmarks (Perth Market)</h3>
+  <div class="three-col">
+    <div class="card" style="text-align:center;">
+      <div style="font-size:24px;font-weight:800;color:var(--blue);">$18&ndash;30</div>
+      <div style="font-size:13px;color:var(--text-muted);margin-top:4px;">CPM (AUD)</div>
+    </div>
+    <div class="card" style="text-align:center;">
+      <div style="font-size:24px;font-weight:800;color:var(--blue);">$1.50&ndash;4.00</div>
+      <div style="font-size:13px;color:var(--text-muted);margin-top:4px;">CPC (AUD)</div>
+    </div>
+    <div class="card" style="text-align:center;">
+      <div style="font-size:24px;font-weight:800;color:var(--blue);">1.0&ndash;2.5%</div>
+      <div style="font-size:13px;color:var(--text-muted);margin-top:4px;">CTR</div>
+    </div>
+    <div class="card" style="text-align:center;">
+      <div style="font-size:24px;font-weight:800;color:var(--green);">$15&ndash;40</div>
+      <div style="font-size:13px;color:var(--text-muted);margin-top:4px;">Cost/Reg (Warm)</div>
+    </div>
+    <div class="card" style="text-align:center;">
+      <div style="font-size:24px;font-weight:800;color:var(--amber);">$30&ndash;70</div>
+      <div style="font-size:13px;color:var(--text-muted);margin-top:4px;">Cost/Reg (Cold)</div>
+    </div>
+    <div class="card" style="text-align:center;">
+      <div style="font-size:24px;font-weight:800;color:var(--accent-light);">30&ndash;80</div>
+      <div style="font-size:13px;color:var(--text-muted);margin-top:4px;">Expected Registrations</div>
+    </div>
+  </div>
+  <p>Perth CPMs are 10&ndash;20% lower than Sydney/Melbourne due to less advertiser competition.</p>
+</section>
+
+<!-- PRICING -->
+<section id="pricing">
+  <div class="section-label">09 / Pricing Strategy</div>
+  <h2>Early Bird &amp; Pricing</h2>
+  <p><strong>Do NOT show the full price in the ad.</strong> Drive to the landing page and let it build value first.</p>
+
+  <div class="table-wrap">
+    <table>
+      <tr><th>Timeline</th><th>Pricing Tactic</th><th>Messaging</th></tr>
+      <tr><td>Week 1&ndash;2 (27 Mar &ndash; 9 Apr)</td><td>Early bird (20&ndash;30% off)</td><td>"Early bird pricing available &mdash; save $X"</td></tr>
+      <tr><td>Day 12&ndash;14 (7&ndash;9 Apr)</td><td>48-hour countdown</td><td>"Early bird ends Wednesday &mdash; don't miss out"</td></tr>
+      <tr><td>Week 3 (10&ndash;16 Apr)</td><td>Standard pricing</td><td>"Registration open &mdash; only X seats remaining"</td></tr>
+      <tr><td>Week 4 (17&ndash;23 Apr)</td><td>Final call</td><td>"Last chance to register"</td></tr>
+      <tr><td>Final days (24&ndash;27 Apr)</td><td>Registration closing</td><td>"Registrations close Sunday"</td></tr>
+    </table>
+  </div>
+  <div class="card card-highlight" style="margin-top:16px;">
+    <p style="margin:0;color:var(--text);"><strong>The early bird deadline is your single most powerful conversion moment.</strong> Plan your highest retargeting spend around it. The 48 hours before expiry will generate more registrations than any other period.</p>
+  </div>
+</section>
+
+<!-- OBJECTIONS -->
+<section>
+  <div class="section-label">10 / Objection Handling</div>
+  <h2>Overcoming Objections in Ads</h2>
+  <div class="objection-grid">
+    <div class="objection-card">
+      <div class="objection-quote">"I'm not technical enough"</div>
+      <div class="objection-response">"No coding required. If you can write an email, you can use AI."</div>
+    </div>
+    <div class="objection-card">
+      <div class="objection-quote">"I can learn this on YouTube"</div>
+      <div class="objection-response">"YouTube teaches tools. This workshop teaches strategy. With hands-on practice."</div>
+    </div>
+    <div class="objection-card">
+      <div class="objection-quote">"AI changes too fast"</div>
+      <div class="objection-response">"We teach principles that work regardless of which tool is trending."</div>
+    </div>
+    <div class="objection-card">
+      <div class="objection-quote">"I don't have time"</div>
+      <div class="objection-response">"3 hours now saves you 300 hours this year."</div>
+    </div>
+    <div class="objection-card">
+      <div class="objection-quote">"Is this actually practical?"</div>
+      <div class="objection-response">"You'll leave with 10 AI workflows you can use Monday morning."</div>
+    </div>
+    <div class="objection-card">
+      <div class="objection-quote">"Not worth the money"</div>
+      <div class="objection-response">"One tip alone will save you hours every week. Worth the ticket price 100x over."</div>
+    </div>
+    <div class="objection-card">
+      <div class="objection-quote">"I'll do it later"</div>
+      <div class="objection-response">"Every week you wait is a week your competitors get further ahead."</div>
+    </div>
+    <div class="objection-card">
+      <div class="objection-quote">"Is the speaker credible?"</div>
+      <div class="objection-response">Lead with experience training teams, speaking credentials, and measurable results.</div>
+    </div>
+  </div>
+</section>
+
+<!-- TRACKING -->
+<section id="tracking">
+  <div class="section-label">11 / Tracking &amp; Decision Rules</div>
+  <h2>Tracking &amp; Measurement</h2>
+
+  <h3>Day 1 Setup Checklist</h3>
+  <ul class="checklist">
+    <li>Meta Pixel installed on all landing/registration pages</li>
+    <li>Custom conversion created for registration confirmation page</li>
+    <li>Conversions API (CAPI) configured if platform supports it</li>
+    <li>UTM parameters on all ad links</li>
+    <li>Custom Audiences created: email list, website visitors, page engagers</li>
+    <li>Conversion exclusion audience: people who completed registration</li>
+  </ul>
+
+  <h3>Daily Monitoring Targets</h3>
+  <div class="table-wrap">
+    <table>
+      <tr><th>Metric</th><th>Target</th><th>Action if Off-Target</th></tr>
+      <tr><td>CTR</td><td>&gt;1.0%</td><td>Below 0.8% after 1,000 impressions &rarr; refresh creative</td></tr>
+      <tr><td>CPC</td><td>&lt;$4.00</td><td>Above $5.00 &rarr; check audience overlap or fatigue</td></tr>
+      <tr><td>Cost per registration</td><td>&lt;$50 cold / &lt;$25 warm</td><td>Above threshold after $100 spend &rarr; pause and diagnose</td></tr>
+      <tr><td>Frequency</td><td>&lt;4 prospecting / &lt;8 retarget</td><td>Above threshold &rarr; expand audience or refresh creative</td></tr>
+      <tr><td>LP conversion rate</td><td>&gt;5%</td><td>Below 3% &rarr; landing page needs work, not the ads</td></tr>
+    </table>
+  </div>
+
+  <h3>Kill Rules</h3>
+  <div class="table-wrap">
+    <table>
+      <tr><th>Condition</th><th>Action</th></tr>
+      <tr><td>$30&ndash;50 spend, zero link clicks</td><td style="color:var(--red);">Pause immediately</td></tr>
+      <tr><td>$50&ndash;75 spend, clicks but zero conversions</td><td style="color:var(--red);">Pause &mdash; hook works, offer/page isn't converting</td></tr>
+      <tr><td>CTR below 0.8% after 1,000+ impressions</td><td style="color:var(--red);">Pause creative</td></tr>
+      <tr><td>Frequency above 4.0 (prospecting)</td><td style="color:var(--amber);">Refresh creative or expand audience</td></tr>
+      <tr><td>Advantage+ CPA 2x higher than manual after $200</td><td style="color:var(--red);">Pause Advantage+ and reallocate</td></tr>
+    </table>
+  </div>
+
+  <h3>Scale Rules</h3>
+  <div class="table-wrap">
+    <table>
+      <tr><th>Condition</th><th>Action</th></tr>
+      <tr><td>3+ conversions at target CPA after 2x CPA spend</td><td style="color:var(--green);">Increase budget 20&ndash;30%</td></tr>
+      <tr><td>48 hours since last increase</td><td style="color:var(--green);">Safe to scale again</td></tr>
+      <tr><td>One ad set clearly outperforms</td><td style="color:var(--green);">Consolidate 60&ndash;70% of budget</td></tr>
+    </table>
+  </div>
+</section>
+
+</div>
+
+<footer>
+  <p>Perth AI Mastery Workshop &mdash; Meta Ad Strategy &mdash; Campaign Window: 27 March &ndash; 27 April 2026</p>
+</footer>
+
+</body>
+</html>
